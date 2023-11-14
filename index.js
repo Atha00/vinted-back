@@ -7,7 +7,7 @@ const Offer = require("./models/Offer");
 const app = express();
 
 app.use(express.json());
-mongoose.connect("mongodb://localhost:27017/vinted");
+mongoose.connect(process.env.MONGODB_URI);
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
