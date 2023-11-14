@@ -25,12 +25,15 @@ app.get("/", (req, res) => {
 
 const userRoutes = require("./routes/user");
 app.use(userRoutes);
+
 const offerRoutes = require("./routes/offer");
 app.use(offerRoutes);
 
 app.all("*", (req, res) => {
   return res.status(404).json("Not found");
 });
+
+console.log("Coucou tout le monde ! 👋👋👋👋👋");
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server started");
